@@ -649,11 +649,10 @@
             </div>
             <div class="contact-grid">
                 <div>
-                    <!-- ===== CORRECTION TÉLÉPHONE : numéro au bon format ===== -->
                     <div class="contact-info-row">
                         <div>
-                            <div class="mono" data-i18n="contact_phone_label">TÉLÉPHONE</div>
-                            <h4><a href="tel:+213792307502" data-cfg-phone><span dir="ltr">+213 7 92 30 75 02</span></a></h4>
+                            <div class="mono" data-i18n="contact_email_label">E-MAIL</div>
+                            <h4><a href="mailto:laytyagami0@gmail.com" data-cfg-email><span dir="ltr">laytyagami0@gmail.com</span></a></h4>
                         </div>
                     </div>
                     <div class="contact-info-row">
@@ -737,6 +736,7 @@
                 fallback: "oussama-logo.png"
             },
             contact: {
+                email: "laytyagami0@gmail.com",
                 phone: "+213792307502",
                 phoneDisplay: "+213 7 92 30 75 02",
                 linkedin: "https://www.linkedin.com/in/oussama-siad-b2410a233",
@@ -800,7 +800,7 @@
                 contact_eyebrow: "Contact",
                 contact_title: "Discutons de votre transition énergétique",
                 contact_desc: "",
-                contact_phone_label: "TÉLÉPHONE",
+                contact_email_label: "E-MAIL",
                 contact_linkedin_label: "LINKEDIN",
                 contact_formation_label: "FORMATION",
                 contact_formation: "Électrotechnique & Énergies renouvelables",
@@ -858,7 +858,7 @@
                 contact_eyebrow: "Contact",
                 contact_title: "Let's discuss your energy transition",
                 contact_desc: "",
-                contact_phone_label: "PHONE",
+                contact_email_label: "E-MAIL",
                 contact_linkedin_label: "LINKEDIN",
                 contact_formation_label: "EDUCATION",
                 contact_formation: "Electrical Engineering & Renewable Energies",
@@ -916,7 +916,7 @@
                 contact_eyebrow: "اتصل",
                 contact_title: "لنتحدث عن تحولك الطاقوي",
                 contact_desc: "",
-                contact_phone_label: "الهاتف",
+                contact_email_label: "البريد الإلكتروني",
                 contact_linkedin_label: "لينكد إن",
                 contact_formation_label: "التكوين",
                 contact_formation: "الهندسة الكهربائية والطاقات المتجددة",
@@ -945,11 +945,11 @@
             const tagEl = document.querySelector('[data-cfg-tag]');
             if (tagEl) tagEl.textContent = CONFIG.tag;
 
-            const phoneEl = document.querySelector('[data-cfg-phone]');
-            if (phoneEl) {
-                phoneEl.href = 'tel:' + CONFIG.contact.phone;
-                const span = phoneEl.querySelector('span');
-                if (span) span.textContent = CONFIG.contact.phoneDisplay;
+            const emailEl = document.querySelector('[data-cfg-email]');
+            if (emailEl) {
+                emailEl.href = 'mailto:' + CONFIG.contact.email;
+                const span = emailEl.querySelector('span');
+                if (span) span.textContent = CONFIG.contact.email;
             }
 
             const liEl = document.querySelector('[data-cfg-linkedin]');
