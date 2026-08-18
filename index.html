@@ -355,6 +355,16 @@
         .contact-info-row p, .contact-info-row a { color: var(--ink-soft); font-size: 0.92rem; word-break: break-word; }
         .contact-info-row a:hover { color: var(--emerald); }
 
+        /* ===== CORRECTION TÉLÉPHONE : style spécifique pour lien tel ===== */
+        .contact-info-row a[href^="tel:"] {
+            color: var(--emerald);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .contact-info-row a[href^="tel:"]:hover {
+            color: var(--gold);
+        }
+
         form { display: grid; gap: 18px; }
         label { font-size: 0.82rem; font-weight: 500; color: var(--navy); margin-bottom: 6px; display: block; }
         input, textarea {
@@ -639,10 +649,11 @@
             </div>
             <div class="contact-grid">
                 <div>
+                    <!-- ===== CORRECTION TÉLÉPHONE : numéro au bon format ===== -->
                     <div class="contact-info-row">
                         <div>
                             <div class="mono" data-i18n="contact_phone_label">TÉLÉPHONE</div>
-                            <h4><a href="tel:+213792307502" data-cfg-phone><span dir="ltr">07 92 30 75 02</span></a></h4>
+                            <h4><a href="tel:+213792307502" data-cfg-phone><span dir="ltr">+213 7 92 30 75 02</span></a></h4>
                         </div>
                     </div>
                     <div class="contact-info-row">
@@ -714,36 +725,35 @@
 
     <script>
         // ================================================================
-        //  CONFIGURATION CENTRALE — modifiez ici pour adapter le site
-        //  (nom, photos, liens, CV, formulaire, etc.)
+        //  CONFIGURATION CENTRALE
         // ================================================================
         const CONFIG = {
             brand: "Oussama SIAD",
-            tag: "SIAD OUSSAMA / INGÉNIEUR D'AFFAIRES",       // bandeau sous l'avatar
+            tag: "SIAD OUSSAMA / INGÉNIEUR D'AFFAIRES",
             images: {
                 logo: "oussama-logo.png",
                 avatar: "AVATAR.png",
                 video: "VIDIO.mp4",
-                fallback: "oussama-logo.png"                  // image de secours si un fichier manque
+                fallback: "oussama-logo.png"
             },
             contact: {
-                phone: "+213792307502",                        // format international (tel:)
-                phoneDisplay: "07 92 30 75 02",                // affichage
+                phone: "+213792307502",
+                phoneDisplay: "+213 7 92 30 75 02",
                 linkedin: "https://www.linkedin.com/in/oussama-siad-b2410a233",
                 linkedinDisplay: "linkedin.com/in/oussama-siad",
-                whatsapp: "213792307502"                       // pour un futur bouton WhatsApp
+                whatsapp: "213792307502"
             },
-            cv: {                                              // PDF locaux (plus fiables que Drive)
+            cv: {
                 fr: "Curriculum Vitae-PDF/Oussama_SIAD_CV_FR.pdf",
                 en: "Curriculum Vitae-PDF/Oussama_SIAD_CV_EN.pdf",
                 ar: "Curriculum Vitae-PDF/Oussama_SIAD_CV_FR.pdf"
             },
             form: {
-                mode: "mailto",        // "mailto" = ouvre le client mail pré-rempli | "demo" = message simulé
-                email: "",             // remplir pour mailto : "exemple@mail.com"
+                mode: "mailto",
+                email: "",
                 subject: "Demande de devis — Site portfolio"
             },
-            langDefault: "fr"          // langue d'arrivée (fr | en | ar)
+            langDefault: "fr"
         };
 
         // ================================================================
@@ -790,9 +800,13 @@
                 contact_eyebrow: "Contact",
                 contact_title: "Discutons de votre transition énergétique",
                 contact_desc: "",
-                contact_phone_label: "TÉLÉPHONE", contact_linkedin_label: "LINKEDIN",
-                contact_formation_label: "FORMATION", contact_formation: "Électrotechnique & Énergies renouvelables", contact_formation_desc: "",
-                contact_doc_label: "DOCUMENT", contact_doc_title: "Curriculum Vitae",
+                contact_phone_label: "TÉLÉPHONE",
+                contact_linkedin_label: "LINKEDIN",
+                contact_formation_label: "FORMATION",
+                contact_formation: "Électrotechnique & Énergies renouvelables",
+                contact_formation_desc: "",
+                contact_doc_label: "DOCUMENT",
+                contact_doc_title: "Curriculum Vitae",
                 contact_doc_link: "Télécharger le CV (PDF)",
                 form_name_label: "Nom complet", form_name_placeholder: "Votre nom",
                 form_email_label: "Email professionnel", form_email_placeholder: "vous@entreprise.com",
@@ -844,9 +858,13 @@
                 contact_eyebrow: "Contact",
                 contact_title: "Let's discuss your energy transition",
                 contact_desc: "",
-                contact_phone_label: "PHONE", contact_linkedin_label: "LINKEDIN",
-                contact_formation_label: "EDUCATION", contact_formation: "Electrical Engineering & Renewable Energies", contact_formation_desc: "",
-                contact_doc_label: "DOCUMENT", contact_doc_title: "Curriculum Vitae",
+                contact_phone_label: "PHONE",
+                contact_linkedin_label: "LINKEDIN",
+                contact_formation_label: "EDUCATION",
+                contact_formation: "Electrical Engineering & Renewable Energies",
+                contact_formation_desc: "",
+                contact_doc_label: "DOCUMENT",
+                contact_doc_title: "Curriculum Vitae",
                 contact_doc_link: "Download CV (PDF)",
                 form_name_label: "Full name", form_name_placeholder: "Your name",
                 form_email_label: "Professional email", form_email_placeholder: "you@company.com",
@@ -898,9 +916,13 @@
                 contact_eyebrow: "اتصل",
                 contact_title: "لنتحدث عن تحولك الطاقوي",
                 contact_desc: "",
-                contact_phone_label: "الهاتف", contact_linkedin_label: "لينكد إن",
-                contact_formation_label: "التكوين", contact_formation: "الهندسة الكهربائية والطاقات المتجددة", contact_formation_desc: "",
-                contact_doc_label: "وثيقة", contact_doc_title: "السيرة الذاتية",
+                contact_phone_label: "الهاتف",
+                contact_linkedin_label: "لينكد إن",
+                contact_formation_label: "التكوين",
+                contact_formation: "الهندسة الكهربائية والطاقات المتجددة",
+                contact_formation_desc: "",
+                contact_doc_label: "وثيقة",
+                contact_doc_title: "السيرة الذاتية",
                 contact_doc_link: "تحميل السيرة الذاتية (PDF)",
                 form_name_label: "الاسم الكامل", form_name_placeholder: "اسمك",
                 form_email_label: "البريد الإلكتروني المهني", form_email_placeholder: "you@company.com",
@@ -915,7 +937,7 @@
         };
 
         // ================================================================
-        //  APPLICATION DE LA CONFIGURATION (liens, images, nom)
+        //  APPLICATION DE LA CONFIGURATION
         // ================================================================
         function applyConfig() {
             document.querySelectorAll('[data-cfg-brand-name]').forEach(el => el.textContent = CONFIG.brand);
@@ -926,7 +948,8 @@
             const phoneEl = document.querySelector('[data-cfg-phone]');
             if (phoneEl) {
                 phoneEl.href = 'tel:' + CONFIG.contact.phone;
-                phoneEl.querySelector('span').textContent = CONFIG.contact.phoneDisplay;
+                const span = phoneEl.querySelector('span');
+                if (span) span.textContent = CONFIG.contact.phoneDisplay;
             }
 
             const liEl = document.querySelector('[data-cfg-linkedin]');
@@ -941,7 +964,7 @@
         }
 
         // ================================================================
-        //  TRADUCTION / LANGUE (avec mémorisation)
+        //  TRADUCTION / LANGUE
         // ================================================================
         function applyTranslations(lang) {
             const t = translations[lang];
@@ -1036,7 +1059,7 @@
         if (backTop) backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
         // ================================================================
-        //  SCROLL SPY — met en surbrillance le lien de section active
+        //  SCROLL SPY
         // ================================================================
         const sections = ['apropos', 'services', 'contact'];
         const navLinks = document.querySelectorAll('nav ul.links a, .nav-panel a[href^="#"]:not(.nav-cta-mobile)');
@@ -1115,7 +1138,7 @@
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (bgVideo) {
             bgVideo.addEventListener('canplay', () => bgVideo.classList.add('ready'));
-            bgVideo.addEventListener('error', () => { /* le fond reste la couleur --navy */ });
+            bgVideo.addEventListener('error', () => {});
             if (!reducedMotion) {
                 const updateVideo = () => {
                     const max = document.documentElement.scrollHeight - window.innerHeight;
@@ -1139,7 +1162,7 @@
         }
 
         // ================================================================
-        //  IMAGES DE SECOURS (si un fichier est manquant)
+        //  IMAGES DE SECOURS
         // ================================================================
         document.querySelectorAll('img').forEach(img => {
             img.addEventListener('error', () => {
