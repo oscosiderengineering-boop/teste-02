@@ -843,7 +843,7 @@
                     <div class="contact-info-row">
                         <div>
                             <div class="mono" data-i18n="contact_email_label">E-MAIL</div>
-                            <h4><a href="mailto:laytyagami0@gmail.com" data-cfg-email><span dir="ltr">laytyagami0@gmail.com</span></a></h4>
+                            <h4><a href="mailto:siad.oussama02@gmail.com" data-cfg-email><span dir="ltr">siad.oussama02@gmail.com</span></a></h4>
                         </div>
                     </div>
                     <div class="contact-info-row">
@@ -927,7 +927,7 @@
                 fallback: "oussama-logo.png"
             },
             contact: {
-                email: "laytyagami0@gmail.com",
+                email: "siad.oussama02@gmail.com",
                 phone: "+213792307502",
                 phoneDisplay: "+213 7 92 30 75 02",
                 linkedin: "https://www.linkedin.com/in/oussama-siad-b2410a233",
@@ -935,9 +935,9 @@
                 whatsapp: "213792307502"
             },
             cv: {
-                fr: "Curriculum Vitae-PDF/Oussama_SIAD_CV_FR.pdf",
-                en: "Curriculum Vitae-PDF/Oussama_SIAD_CV_EN.pdf",
-                ar: "Curriculum Vitae-PDF/Oussama_SIAD_CV_FR.pdf"
+                fr: "https://drive.google.com/file/d/1hwcFnw_breeTeemqYh2-eyJJ8-qLU5n-/view?usp=sharing",
+                en: "https://drive.google.com/file/d/17enzRTtbstp3-Z8j6n1eP0MbwKNW0wUK/view?usp=sharing",
+                ar: "https://drive.google.com/file/d/1cyNh7Ffysh3KytedtBicaQMThGtbdq0k/view?usp=sharing"
             },
             form: {
                 mode: "mailto",
@@ -1410,14 +1410,22 @@
                 }
 
                 if (CONFIG.form.mode === 'mailto' && CONFIG.form.email) {
-                    const subject = encodeURIComponent(CONFIG.form.subject);
-                    const body = encodeURIComponent(
-                        'Nom : ' + name + '\n' +
-                        'Email : ' + email + '\n\n' +
-                        'Message :\n' + message
-                    );
-                    window.location.href = 'mailto:' + CONFIG.form.email + '?subject=' + subject + '&body=' + body;
-                    formStatus.textContent = t.form_mailto_success;
+                    // ===== OUVERTURE DIRECTE DE GMAIL =====
+                    const toEmail = "siad.oussama02@gmail.com";
+                    const subject = "Demande de devis - " + name;
+                    const body = 
+                        "Nom : " + name + "\n" +
+                        "Email : " + email + "\n\n" +
+                        "Message :\n" + message;
+
+                    // Ouvrir Gmail dans un nouvel onglet
+                    const gmailLink = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + 
+                        encodeURIComponent(toEmail) + 
+                        '&su=' + encodeURIComponent(subject) + 
+                        '&body=' + encodeURIComponent(body);
+
+                    window.open(gmailLink, '_blank');
+                    formStatus.textContent = "✓ Gmail s'ouvre avec votre message pré-rempli !";
                 } else {
                     formStatus.textContent = t.form_success;
                 }
